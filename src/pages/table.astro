@@ -26,7 +26,7 @@ const data = await response.json();
 const [body] = data.RESPONSE.RESULT;
 
 await fs.writeFile(
-  "public/assets/short.json",
+  "public/short.json",
   JSON.stringify(body)
 );
 
