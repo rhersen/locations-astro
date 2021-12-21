@@ -1,5 +1,6 @@
 ---
 import Counter from '../components/Counter.jsx';
+import authenticationkey from '../components/authenticationkey.js';
 
 let title = 'My New Astro Site!';
     const response = await fetch(
@@ -7,7 +8,7 @@ let title = 'My New Astro Site!';
       {
         method: "POST",
         body: `<REQUEST>
-                     <LOGIN authenticationkey="${import.meta.env.PUBLIC_TRAFIKVERKET_API_KEY}" />
+                     <LOGIN authenticationkey="${authenticationkey}" />
                      <QUERY objecttype="TrainStation" schemaversion="1">
                            <FILTER>
                                  <EQ name="Advertised" value="true" />

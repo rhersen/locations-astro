@@ -1,1 +1,1 @@
-export default import.meta.env.TRAFIKVERKET_API_KEY;
+export default import.meta.env.PUBLIC_TRAFIKVERKET_API_KEY;
