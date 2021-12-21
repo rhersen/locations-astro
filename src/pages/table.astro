@@ -1,6 +1,7 @@
 ---
 import Table from "../components/Table.jsx";
 import authenticationkey from "../components/authenticationkey.js";
+import short from "../components/short.js";
 import fs from "node:fs/promises";
 
 const response = await fetch(
@@ -27,9 +28,8 @@ const [body] = data.RESPONSE.RESULT;
 
 await fs.writeFile(
   "public/short.json",
-  JSON.stringify(body)
+  JSON.stringify(short(body))
 );
-
 ---
 
 <html lang="en">
