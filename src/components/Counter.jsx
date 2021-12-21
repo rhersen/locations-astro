@@ -4,9 +4,8 @@ import styles from './Counter.module.css'
 export default function Counter({locations}) {
 
   return (
-    <div className={styles.counter}>
-      <h1>Simple React Counter</h1>
-      <p>Count: {locations.length}</p>
-    </div>
+    <ol className={styles.counter}>
+      {locations.map(location => <li>{location.AdvertisedLocationName}</li>)}
+    </ol>
   )
 }
