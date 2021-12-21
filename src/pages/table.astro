@@ -1,5 +1,5 @@
 ---
-import Counter from '../components/Counter.jsx';
+import Table from '../components/Table.jsx';
 import authenticationkey from '../components/authenticationkey.js';
 
 let title = 'My New Astro Site!';
@@ -13,7 +13,6 @@ let title = 'My New Astro Site!';
                            <FILTER>
                                  <EQ name="Advertised" value="true" />
                            </FILTER>
-                           <INCLUDE>AdvertisedLocationName</INCLUDE>
                      </QUERY>
                </REQUEST>`,
         headers: {
@@ -25,7 +24,6 @@ let title = 'My New Astro Site!';
 
     const data = await response.json();
     const [body] = data.RESPONSE.RESULT;
-    console.log(body);
 ---
 
 <html lang="en">
@@ -35,20 +33,12 @@ let title = 'My New Astro Site!';
 
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style/global.css">
   <link rel="stylesheet" href="/style/home.css">
 </head>
 
 <body>
   <main>
-    <header>
-      <div>
-        <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-        <h1>{body}</h1>
-      </div>
-    </header>
-
-    <Counter locations={body?.TrainStation} />
+    <Table locations={body?.TrainStation} />
   </main>
 </body>
 </html>
