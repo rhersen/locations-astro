@@ -1,1 +1,1 @@
-export default key => key ? key : "no API key";
+export default import.meta.env.TRAFIKVERKET_API_KEY;
