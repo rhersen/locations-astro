@@ -7,7 +7,7 @@ let title = 'My New Astro Site!';
       {
         method: "POST",
         body: `<REQUEST>
-                     <LOGIN authenticationkey="${import.meta.env.TRAFIKVERKET_API_KEY}" />
+                     <LOGIN authenticationkey="${import.meta.env.PUBLIC_TRAFIKVERKET_API_KEY}" />
                      <QUERY objecttype="TrainStation" schemaversion="1">
                            <FILTER>
                                  <EQ name="Advertised" value="true" />
