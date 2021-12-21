@@ -1,10 +1,24 @@
-import assert from "assert";
+import { expect } from "chai";
 import short from "../src/components/short.js";
 
-describe("Array", function () {
-  describe("#indexOf()", function () {
-    it("should return -1 when the value is not present", function () {
-      assert.equal(short([1, 2, 3]), -1);
-    });
-  });
+describe("short", () => {
+  it("extracts", () =>
+    expect(
+      short({
+        TrainStation: [
+          {
+            AdvertisedLocationName: "Avesta centrum",
+            AdvertisedShortLocationName: "Avesta centrum",
+            LocationSignature: "Acm",
+          },
+          {
+            AdvertisedLocationName: "Abisko turiststation",
+            AdvertisedShortLocationName: "Abisko turist",
+            LocationSignature: "Akt",
+          },
+        ],
+      })
+    ).to.deep.equal({ Acm: "Avesta centrum", Akt: "Abisko turist" }));
+
+  it("handles empty input", () => expect(short()).to.deep.equal({}));
 });
