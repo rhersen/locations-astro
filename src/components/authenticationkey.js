@@ -1,1 +1,1 @@
-export default "openapiconsolekey"
+export default key => key ? key : "no API key";
