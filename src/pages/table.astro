@@ -10,11 +10,7 @@ const response = await fetch(
     method: "POST",
     body: `<REQUEST>
                  <LOGIN authenticationkey="${authenticationkey}" />
-                 <QUERY objecttype="TrainStation" schemaversion="1">
-                       <FILTER>
-                             <EQ name="Advertised" value="true" />
-                       </FILTER>
-                 </QUERY>
+                 <QUERY objecttype="TrainStation" schemaversion="1" />
            </REQUEST>`,
     headers: {
       "Content-Type": "application/xml",
