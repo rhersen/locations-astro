@@ -2,6 +2,7 @@
 import Table from "../components/Table.jsx";
 import authenticationkey from "../components/authenticationkey.js";
 import short from "../components/short.js";
+import geometry from "../components/geometry.js";
 import fs from "node:fs/promises";
 
 const response = await fetch(
@@ -25,6 +26,11 @@ const [body] = data.RESPONSE.RESULT;
 await fs.writeFile(
   "public/short.json",
   JSON.stringify(short(body))
+);
+
+await fs.writeFile(
+  "public/geometry.json",
+  JSON.stringify(geometry(body))
 );
 ---
 
